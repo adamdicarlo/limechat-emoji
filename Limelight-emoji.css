@@ -22,11 +22,13 @@ a {
 	color: inherit;
 }
 
-.inlineimage {
-	margin: 10px 20px 15px 0;
-	max-width: 200px;
-	max-height: 150px;
-	-webkit-box-shadow: 2px 2px 2px #888;
+.emoji {
+  background-size: 1.25em 1.25em;
+  width: 1.25em;
+  height: 1.25em;
+  display: inline-block;
+  margin: 0;
+  vertical-align: text-bottom;
 }
 
 .line  { padding: 0.2ex 0; }
@@ -76,29 +78,32 @@ a {
 }
 
 /* Messages in main view, but not console */
-body.normal .message[type=privmsg]          { padding-left: 22ex; display: block; }
+body.normal .message[type=notice],
+body.normal .message[type=privmsg],
+body.normal .message[type=reply] {
+  display: block;
+  padding-left: 22ex;
+}
 
-body.normal .message[type=notice]           { padding-left: 22ex; display: block; }
-body.normal .message[type=join]             { padding-left: 22ex; }
-body.normal .message[type=part]             { padding-left: 22ex; }
-body.normal .message[type=quit]             { padding-left: 22ex; }
-body.normal .message[type=kick]             { padding-left: 22ex; }
-body.normal .message[type=kill]             { padding-left: 22ex; }
-body.normal .message[type=nick]             { padding-left: 22ex; }
-body.normal .message[type=mode]             { padding-left: 22ex; }
-body.normal .message[type=topic]            { padding-left: 22ex; }
-body.normal .message[type=invite]           { padding-left: 22ex; }
-body.normal .message[type=wallops]          { padding-left: 22ex; }
-
-body.normal .message[type=system]           { padding-left: 22ex; }
-body.normal .message[type=error]            { padding-left: 22ex; }
-body.normal .message[type=reply]            { padding-left: 22ex; display: block; }
-body.normal .message[type=error_reply]      { padding-left: 22ex; }
-body.normal .message[type=dcc_send_send]    { padding-left: 22ex; }
-body.normal .message[type=dcc_send_receive] { padding-left: 22ex; }
-
-body.normal .message[type=debug_send]       { padding-left: 22ex; }
-body.normal .message[type=debug_receive]    { padding-left: 22ex; }
+body.normal .message[type=part],
+body.normal .message[type=quit],
+body.normal .message[type=kick],
+body.normal .message[type=kill],
+body.normal .message[type=nick],
+body.normal .message[type=mode],
+body.normal .message[type=topic],
+body.normal .message[type=invite],
+body.normal .message[type=wallops],
+body.normal .message[type=system],
+body.normal .message[type=error],
+body.normal .message[type=error_reply],
+body.normal .message[type=dcc_send_send],
+body.normal .message[type=dcc_send_receive],
+body.normal .message[type=debug_send],
+body.normal .message[type=debug_receive],
+body.normal .message[type=join] {
+  padding-left: 22ex;
+}
 
 /* Spans in line */
 
